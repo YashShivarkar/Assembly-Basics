@@ -1,0 +1,14 @@
+Terminl:
+nasm -f elf -o name.o name.asm
+ld -m elf_i386 -o name name.o
+./name
+
+GDB:
+gdb name
+layout asm
+layout regs
+break _start
+set disassembly-flavor intel
+run
+ni
+info regs al
